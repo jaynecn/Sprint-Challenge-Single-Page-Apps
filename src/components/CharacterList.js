@@ -47,7 +47,7 @@ function Characters(props) {
   return (
     <StyledCharacterListDiv>
       <div>
-      <SearchForm onsearchchange={onSearchChange} handlesubmit={handleSubmit} characters={characters} search={search}/>
+      {/* <SearchForm onsearchchange={onSearchChange} handlesubmit={handleSubmit} characters={characters} search={search}/> */}
       </div>
       {
         characters.map((character) => (

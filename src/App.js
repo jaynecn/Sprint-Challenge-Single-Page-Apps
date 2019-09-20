@@ -3,7 +3,10 @@ import {Route, NavLink} from 'react-router-dom';
 import Header from "./components/Header.js";
 import WelcomePage from './components/WelcomePage';
 import CharacterList from './components/CharacterList';
+import SearchForm from './components/SearchForm';
 import styled from 'styled-components';
+import { SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG } from "constants";
+
 
 
 //Styled Components
@@ -32,6 +35,13 @@ a.activeNavButton {
 
 
 function App() {
+  const [searchTerm, setSearchTerm] =useState('');
+
+  const onSearch = event => {
+    // debugger
+    setSearchTerm(event.target.value)
+  }
+
   return (
     <main>
       <Header />
@@ -42,17 +52,13 @@ function App() {
         <li>
           <NavLink to="/characters" activeClassName="activeNavButton">Characters</NavLink>
         </li>
-        {/* <li>
-          <NavLink to="/locations" activeClassName="activeNavButton">Locations</NavLink>
-        </li>
         <li>
-          <NavLink to="/episodes" activeClassName="activeNavButton">Episodes</NavLink>
-        </li> */}
+          <NavLink to="/search" activeClassName="activeNavButton">Search</NavLink>
+        </li>
       </NavBar>
       <Route exact path="/" render={props => <WelcomePage {...props} /> } />
       <Route exact path="/characters" render={props => <CharacterList {...props} /> } />
-      {/* <Route exact path="/locations" render={props => <Locations {...props} /> } />
-      <Route exact path="/episodes" render={props => <Episodes {...props} /> } /> */}
+      <Route exact path="/search" render={props => <SearchForm {...props} /> } />
       
 
     </main>
