@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: With client-side routing is when routing is handled by Javascript.  We can use Javascript to hold memory or maintain state on the browser.  With client-side routing, the page won’t automatically refresh when we request information.  This can make the user experience quicker than client-side routing.  The whole page won’t refresh, only partial aspects of the UI are updated, thus taking some pressure off servers.
 
 ## Project Set Up
 
