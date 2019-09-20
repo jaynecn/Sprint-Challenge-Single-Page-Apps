@@ -45,15 +45,15 @@ export default function SearchForm() {
 
   const search = (event) => {
     event.preventDefault(); 
-    setCharacters(characters.filter(x => {
-      return x.name.includes(searchTerm)
+    setCharacters(characters.filter(info => {
+      return info.name.includes(searchTerm)
     }))
   }
  
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/character')
-      .then(res => {
-        setCharacters(res.data.results)
+      .then(response => {
+        setCharacters(response.data.results)
       })
   }, []);
 

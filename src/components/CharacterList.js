@@ -16,18 +16,7 @@ align-items: center;`
 function Characters(props) {
 
   const [characters, setCharacters] = useState([])
-  const [search, setSearch] = useState('');
-
-  const onSearchChange = e => {
-    setSearch({
-      name: e.target.value,
-    })
-  }
-
-  const handleSubmit = event => {
-    event.preventDefault();
-  }
-  
+    
   useEffect(() => {
     const getCharacters = () => {
       axios
@@ -47,7 +36,7 @@ function Characters(props) {
   return (
     <StyledCharacterListDiv>
       <div>
-      {/* <SearchForm onsearchchange={onSearchChange} handlesubmit={handleSubmit} characters={characters} search={search}/> */}
+
       </div>
       {
         characters.map((character) => (
