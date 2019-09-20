@@ -5,7 +5,6 @@ import styled from 'styled-components';
 //Styled Components
 
 const StyledSearchDiv = styled.div`
-border: 1px solid blue;
 margin: 0px;
 padding: 20px 0px 10px 0px; 
 display: flex;
@@ -32,8 +31,6 @@ justify-content: center;
 align-items: center;`
 
 const StyledCardImageDiv = styled.img`
-/* display: flex;
-justify-content: center; */
 align-items: center;
 width: 100px;`
 
@@ -76,20 +73,3 @@ export default function SearchForm() {
     </StyledSearchDiv>
   );
 }
-
-function JayneForm(props) {
- 
-  return (
-    <section className="search-form">
-     <form onSubmit={event => props.handlesubmit(event)}>
-       <label>Search Name</label>
-       <input type='text' name='name' onChange={event => props.onsearchchange(event)} />
-       {/* // need to put in value */}
-       <button>Search</button> 
-     </form>
-    </section>
-  );
-}
-
-// export default SearchForm;
-
