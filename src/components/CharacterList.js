@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import CharacterCard from './CharacterCard';
+import SearchForm from './SearchForm';
 import styled from 'styled-components';
 
 //Styled Components
@@ -13,14 +14,25 @@ align-items: center;`
 
 
 function Characters(props) {
+
   const [characters, setCharacters] = useState([])
+  const [search, setSearch] = useState('');
+
+  const onSearchChange = e => {
+    setSearch({
+      name: e.target.value,
+    })
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault();
+  }
   
   useEffect(() => {
     const getCharacters = () => {
       axios
         .get('https://rickandmortyapi.com/api/character/')
         .then(response => {
-          console.log(response.data);
           setCharacters(response.data.results);
         })
         .catch(error => {
@@ -30,15 +42,19 @@ function Characters(props) {
 
     getCharacters();
   }, []);
-  console.log(characters);
+
 
   return (
-    <StyledCharacterListDiv> 
+    <StyledCharacterListDiv>
+      <div>
+      <SearchForm onsearchchange={onSearchChange} handlesubmit={handleSubmit} characters={characters} search={search}/>
+      </div>
       {
         characters.map((character) => (
           <CharacterCard key={character.id} character={character}/>
         ))
       }
+      
     </StyledCharacterListDiv>
   )
 }

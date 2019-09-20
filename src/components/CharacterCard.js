@@ -18,8 +18,6 @@ align-items: center;
 width: 150px;`
 
 function CharacterCard(props) {
-  // const {character} = props;
-  console.log(props);
   return (
   <StyledCardDiv>
     <h1>{props.character.name}</h1>

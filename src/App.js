@@ -5,6 +5,7 @@ import WelcomePage from './components/WelcomePage';
 import CharacterList from './components/CharacterList';
 import styled from 'styled-components';
 
+
 //Styled Components
 const NavBar = styled.ul`
 background-color: white;
